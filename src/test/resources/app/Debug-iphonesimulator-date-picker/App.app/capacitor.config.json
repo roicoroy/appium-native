@@ -1,0 +1,8 @@
+{
+	"appId": "ionic.e2e.appium",
+	"appName": "ionic-e2e-appium",
+	"webDir": "www",
+	"server": {
+		"androidScheme": "https"
+	}
+}

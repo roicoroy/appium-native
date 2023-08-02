@@ -1,0 +1,11 @@
+framework module CapacitorCommunityDatePicker {
+  umbrella header "CapacitorCommunityDatePicker-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module CapacitorCommunityDatePicker.Swift {
+  header "CapacitorCommunityDatePicker-Swift.h"
+  requires objc
+}
