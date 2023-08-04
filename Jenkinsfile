@@ -1,36 +1,10 @@
-pipeline {
-    agent any
-    environment {
-        APPIUM_PORT= 4273
-    }
-stages {
-        stage('Build') {
+APPIUM_PORT = '4723'
+
+stage('Start appium server') {
             steps {
-                echo "Building.."
+                script {
+                    echo "Start appium server on port ${APPIUM_PORT}"
+                    sh "appium --port ${APPIUM_PORT}"
+                }
             }
         }
-        stage('Test') {
-            steps {
-                echo "Testing.."
-                sh "appium --port ${APPIUM_PORT}"
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "Deploying...."
-            }
-        }
-        post {
-            always{
-                echo "Stop appium server"
-                sh "kill \$(lsof -t -i :${APPIUM_PORT})"
-            }
-            success{
-            }
-            failure{
-            }
-            cleanup{
-            }
-       }
-    }
-}
