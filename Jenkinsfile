@@ -11,12 +11,12 @@ pipeline {
         }
         stage('Test'){
             steps {
-                sh 'echo $JAVA_HOME'
+                sh 'echo $HOME'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'echo $JAVA_HOME'
+                sh 'echo $LOGNAME'
             }
         }
     }
