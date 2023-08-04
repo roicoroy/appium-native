@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        APPIUM_PORT= 5555
+        APPIUM_PORT= 4273
     }
 stages {
         stage('Build') {
@@ -22,7 +22,6 @@ stages {
         }
         post {
             always{
-                ...
                 echo "Stop appium server"
                 sh "kill \$(lsof -t -i :${APPIUM_PORT})"
             }
