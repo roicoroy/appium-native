@@ -1,9 +1,23 @@
-stages {
-    stage('Stage 1') {
-        steps { }
+pipeline {
+    agent any
+    options {
+        skipStagesAfterUnstable()
     }
-
-    stage('Stage 2') {
-        steps { }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo $JAVA_HOME'
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'echo $JAVA_HOME'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'echo $JAVA_HOME'
+            }
+        }
     }
 }
