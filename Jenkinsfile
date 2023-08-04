@@ -13,7 +13,6 @@ stages {
             steps {
                 echo "Testing.."
                 sh "appium --port ${APPIUM_PORT}"
-                ...
             }
         }
         stage('Deploy') {
@@ -28,13 +27,10 @@ stages {
                 sh "kill \$(lsof -t -i :${APPIUM_PORT})"
             }
             success{
-                ...
             }
             failure{
-                ...
             }
             cleanup{
-                ...
             }
        }
     }
