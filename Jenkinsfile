@@ -26,4 +26,7 @@ node {
 
    stage 'archive'
    archive 'target/*.jar'
+
+
+   
 }
